@@ -13,17 +13,14 @@ const bodyColor = document.querySelector('body');
 const randomIntegerFromInterval = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
-
 startBtn.addEventListener('click', clickStart);
 stopBtn.addEventListener('click', clickStop);
-
 function clickStart() {
     changeColor = setInterval(() => {
     bodyColor.style.backgroundColor = colors[randomIntegerFromInterval(0, colors.length - 1)];
   }, 1000);
  startBtn.disabled = true;
 }
-
 function clickStop() {
     clearInterval(changeColor);
     startBtn.disabled = false;
